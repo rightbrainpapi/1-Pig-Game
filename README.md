@@ -13,12 +13,10 @@ Below are the top three fundamental things I learned while building this project
 
 #### Example from the code
 
-[Hoisting and Functional Declaration](readmeAssets/hoistingandfunctiondeclaration.png)
+- [Hoisting and Functional Declaration](readmeAssets/hoistingandfunctiondeclaration.png)
 
 
 ### Scope Chain: Lexical Scope 
-
-Scoping answers the question, where can we access a variable or a function. 
 **Scoping answers the question _where_ can we access a variable or a function.**
 
 In JavaScript each function creates a scope (aka space/environment). Variables that are defined in a scope are only made accessible within the parameters of that scope. 
@@ -41,7 +39,7 @@ If this were the case functionB would have access to all of the variables define
 This is lexical scoping!
 
 #### Example from the code
-[Lexical Scoping](readmeAssets/lexicalScoping.png)
+- ![Lexical Scoping](readmeAssets/lexicalScoping.png)
 
 
 ### State Variables
