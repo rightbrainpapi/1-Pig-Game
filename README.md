@@ -9,6 +9,8 @@ To view the project click here: [Pig Game](https://rightbrainpapi.github.io/1-Pi
 
 Below are the top three fundamental things I learned while building this project.
 
+---
+
 ### 1. Hoisting and Function Declarations:
 **Hoisting is the _process_ where variables and functions are moved to the top of their scopes before execution.**
 
@@ -30,7 +32,7 @@ Additionally, upon execution of the hoisted `initializeNewGame()` function the g
 
 **_Note: JavaScript only hoists declarations, not the initialisations. So in this above example that initializations of the  global variables only happened after the hoisted function was execiuted/called._**
 
-
+---
 
 ### 2. Scope Chain: Lexical Scope 
 **Scoping answers the question _where_ can we access a variable or a function.**
@@ -57,8 +59,9 @@ If this were the case functionB would have access to all of the variables define
 
 This is lexical scoping!
 
+--- 
 
-### State Variables
+### 3. State Variables
 
 
 #### Example from the code
