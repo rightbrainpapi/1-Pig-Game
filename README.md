@@ -67,9 +67,10 @@ This is lexical scoping!
 In JavaScript, and in programming i general,  we use (and need) a state variable when we need to remember the state or condition of something. 
 
 #### Example from the code
-![State Variable: gamePlaying = true](readmeAssets/stateVariable.png)
 
 #### State Variable Pt.1 
+![State Variable: gamePlaying = true](readmeAssets/stateVariable.png)
+
 In the above example we:
 -  used a state variable called gamePlaying which is set to true in the initializeNewGame function.
 -  passed the gamePlaying state variable in as a condition inside ananomous function that rolls the dice on click
