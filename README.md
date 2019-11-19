@@ -13,7 +13,7 @@ Below are the top three fundamental things I learned while building this project
 
 #### Example from the code
 
-- [Hoisting and Functional Declaration](readmeAssets/hoistingandfunctiondeclaration.png)
+![Hoisting and Functional Declaration](readmeAssets/hoistingandfunctiondeclaration.png)
 
 
 ### Scope Chain: Lexical Scope 
@@ -39,7 +39,7 @@ If this were the case functionB would have access to all of the variables define
 This is lexical scoping!
 
 #### Example from the code
-- ![Lexical Scoping](readmeAssets/lexicalScoping.png)
+![Lexical Scoping](readmeAssets/lexicalScoping.png)
 
 
 ### State Variables
