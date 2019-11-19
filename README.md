@@ -4,22 +4,41 @@ This repo holds the finished product of the Javascript project I built while tak
 
 To view the project click here: [Pig Game](https://rightbrainpapi.github.io/1-Pig-Game/)
 
-👇 **_Please read the following Frequently Asked Questions (FAQ) carefully before starting the course_** 👇
 
 ## 3 Things I learned
 
 Below are the top three fundamental things I learned while building this project.
-### Hoisting and Function Declarations:
+
+### 1. Hoisting and Function Declarations:
+**Hoisting is the _process_ where variables and functions are moved to the top of their scopes before execution.**
+
+In JavaScript, this means that regardless of where variables or functions are declared they will always be moved to the top of their scope. This is applicable to locally and globally declared variables and functions.
 
 #### Example from the code
-
 ![Hoisting and Functional Declaration](readmeAssets/hoistingandfunctiondeclaration.png)
 
+#### Function Declaration and Scope
 
-### Scope Chain: Lexical Scope 
+In the above example we see:
+1. Variables are declared at the very top of the page. 
+2. A function named `initializeNewGame()` being called
+3. the function named initializeNewGame being declaed (toward the buttom)
+
+Because of hoisting the computer knows what `initializeNewGame()` means even though the declaration of the function is made later on in the script.
+
+Additionally, upon execution of the hoisted `initializeNewGame()` function the global variables that are declared outside of the function but set/initialized inside of `initializeNewGame()` are made available to all other functions that exist in the global scope.  
+
+**_Note: JavaScript only hoists declarations, not the initialisations. So in this above example that initializations of the  global variables only happened after the hoisted function was execiuted/called._**
+
+
+
+### 2. Scope Chain: Lexical Scope 
 **Scoping answers the question _where_ can we access a variable or a function.**
 
 In JavaScript each function creates a scope (aka space/environment). Variables that are defined in a scope are only made accessible within the parameters of that scope. 
+
+#### Example from the code
+![Lexical Scoping](readmeAssets/lexicalScoping.png)
 
 #### Lexical Scope
 JavaScript uses Lexical Scoping.
@@ -38,9 +57,6 @@ If this were the case functionB would have access to all of the variables define
 
 This is lexical scoping!
 
-#### Example from the code
-![Lexical Scoping](readmeAssets/lexicalScoping.png)
-
 
 ### State Variables
 
@@ -48,6 +64,3 @@ This is lexical scoping!
 #### Example from the code
 
 
-**A:** If you're new to GitHub and just want to download the complete package, hit the green button saying "Clone or download", choose the "Download ZIP" option, and you're good to go.
-
-### Q2: I'm stuck in one of the projects. Where do I get help?++=
