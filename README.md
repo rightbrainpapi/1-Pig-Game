@@ -62,8 +62,17 @@ This is lexical scoping!
 --- 
 
 ### 3. State Variables
+**State variable tells us the condition of a system.**
 
+In JavaScript, and in programming i general,  we use (and need) a state variable when we need to remember the state or condition of something. 
 
 #### Example from the code
+![Lexical Scoping](readmeAssets/stateVariable.png)
+
+#### State Variable
+In the above example we:
+-  used a state variable called gamePlaying which is set to true in the initializeNewGame function.
+- passed the gamePlaying state variable in as a condition inside ananomous function that rolls the dice on click
+    - because gameplaying is true it allows the player to in fact roll the dice.
 
 
