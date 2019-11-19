@@ -9,28 +9,19 @@ GAME RULES:
 
 */
 
-
-
-
-
-
 // document.querySelector("#current-" + activePlayer).textContent = dice
 // document.querySelector("#current-" + activePlayer).innerHTML = "<em>" + dice + "</em>";
 // Grabs the id called score-0 and stores it in a variable called x
 // var x = document.querySelector("#score-0").textContent;
 
 
-var scores, roundScore, activePlayer, gamePlaying;
+var scores, roundScore, previousRoll, activePlayer, gamePlaying; // <-- Game Playing is our state variable and it is set to true inside of the initializeNewGame function
 
-// Game Playing is our state variable
-
+// The initializeNewGame() is declared below and is being called here.
 initializeNewGame();
 
-
-
-
-
-// Grabs the class called btn-roll add an click event listener on it that triggers the ananmous function
+// This function rolls the dice
+// Grabs the class called btn-roll add an click event listener on it that triggers the ananomous function
 document.querySelector(".btn-roll").addEventListener("click", function(){
     if (gamePlaying){
         // Do Something Here
@@ -48,23 +39,38 @@ document.querySelector(".btn-roll").addEventListener("click", function(){
         // [x] update the round score
         //      - only if the number is not a 1
         //      - if number is a 1 the player's score gets wiped out
-        if (dice !== 1){
+
+        if ( dice === 6 ){
+            // store in previousRoll
+            previousRoll += dice;
+    
+            // placing the round score into the UI
+            document.querySelector("#current-" + activePlayer).textContent = roundScore;
+            // link to that player
+            // clear after two rolls
+            console.log("The dice is currently " + dice)
+            console.log("The current count of the previousRoll is now " + previousRoll)
+
+            // check to see if the dice roll amounts to 12
+            previousRoll === 12 ? nextPlayer() : roundScore += dice;
+        }
+
+        else if (dice !== 1 && dice !== 6){
             // add the score
             roundScore += dice;
             document.querySelector("#current-" + activePlayer).textContent = roundScore;
-
-            // scores[activePlayer] += roundScore
-            // document.getElementById("score-0").textContent = roundScore
-            // console.log(roundScore)
-
-        }  else {
-        // Move to the Next player
+            // resetting previousRoll when the number rolled is not a 1 or a 6
+            previousRoll = 0;
+            console.log("The current count of the previousRoll is now " + previousRoll)
+        }  
+        
+        else {
+        // Move to the Next player if it is a 1. when it moves to next player the value of previousRoll gets reset to 0
         nextPlayer();
 
        }
     }
 });
-
 
 
 
@@ -74,6 +80,7 @@ document.querySelector(".btn-hold").addEventListener("click", function(){
 if(gamePlaying){
         // Add the current score to the Global score
             scores[activePlayer] += roundScore;
+            
 
         // Update the UI
 
@@ -106,7 +113,6 @@ if(gamePlaying){
 
 });
 
-
 function nextPlayer(){
  // move on to the next player
  console.log("Next players turn");
@@ -116,6 +122,9 @@ function nextPlayer(){
  activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
  // when this player rolls the roundScore should start from 0
  roundScore = 0;
+
+ // resetting the previousRoll to zero when the player changes.
+ previousRoll = 0;
 
  document.getElementById("current-0").textContent = "0";
  document.getElementById("current-1").textContent = "0";
@@ -140,11 +149,20 @@ function nextPlayer(){
 // When the button is pressed then call the initialize new game function
 document.querySelector(".btn-new").addEventListener("click", initializeNewGame);
 
-
-
+// Function Declarations are hoisted.
+// Because function declarations are hoisted the first time the program runs
+// it sets the global variables score, roundScore activePlayer and gamePlaying all to undefined 
+// (see: above where the global variables var score, roundScore, activePlayer, and gamePlaying are declared)
+// when the program gets called/ executed (see: above where initializeNewGame is called)
+// the variables inside of this function reset the global variables at the top of the page to 
+// their respective values. 
+// Because this is done all other functions are able to access the values of the global variables
+// it might look like the variables belong to this functions lexical scope but it does not.
+// the variables are simply being set.
 function initializeNewGame(){
     scores = [0, 0];
     roundScore = 0;
+    previousRoll = 0;
     activePlayer = 0; 
     gamePlaying = true  
 
@@ -173,5 +191,20 @@ function initializeNewGame(){
 }
 
 
+////////////////////////////////////
+////////////////////////////////////
+//////// Coding challeng 6.1 ///////
+////////////////////////////////////
+////////////////////////////////////
+////////////////////////////////////
+// A player loses their entire score if they roll two sixes in a row
+// after that it is the next playe's turn 
+// (Hint: Always save the previos dice roll in a seperate variable)
+////////////////////////////////////
+// [x] Completed
+////////////////////////////////////
+
+
+   
 
 
