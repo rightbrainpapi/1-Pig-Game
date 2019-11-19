@@ -80,6 +80,7 @@ In the above example we:
 ![State Variable: gamePlaying = false](readmeAssets/stateVariable1.png)
 In the above example we:
 -  used a state variable called gamePlaying which is set to true in the initializeNewGame function.
+-   passed the gamePlaying state variable in as a condition inside ananomous function that holds the score on click
 -  set the gamePlaying variable to false inside of the if statement in the event that a player has made has a score of a winning score.
     - The next time gamePlaying state variable goes into the if condition of the roll dice ananomous function it will be false. 
         - Because gameplaying is false it prevents the player from rolling the dice
