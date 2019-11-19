@@ -67,12 +67,18 @@ This is lexical scoping!
 In JavaScript, and in programming i general,  we use (and need) a state variable when we need to remember the state or condition of something. 
 
 #### Example from the code
-![Lexical Scoping](readmeAssets/stateVariable.png)
+![State Variable: gamePlaying = true](readmeAssets/stateVariable.png)
 
-#### State Variable
+#### State Variable Pt.1 
 In the above example we:
 -  used a state variable called gamePlaying which is set to true in the initializeNewGame function.
-- passed the gamePlaying state variable in as a condition inside ananomous function that rolls the dice on click
-    - because gameplaying is true it allows the player to in fact roll the dice.
+-  passed the gamePlaying state variable in as a condition inside ananomous function that rolls the dice on click
+    - Because gameplaying is true it allows the player to in fact roll the dice.
 
-
+#### State Variable Pt.2 
+![State Variable: gamePlaying = false](readmeAssets/stateVariable1.png)
+In the above example we:
+-  used a state variable called gamePlaying which is set to true in the initializeNewGame function.
+-  set the gamePlaying variable to false inside of the if statement in the event that a player has made has a score of a winning score.
+    - The next time gamePlaying state variable goes into the if condition of the roll dice ananomous function it will be false. 
+        - Because gameplaying is false it prevents the player from rolling the dice
